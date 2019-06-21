@@ -19,6 +19,7 @@ body {
     animation-delay: 2.7s;
     animation-duration: 2s;
 }
+
 @keyframes showPage { 
     from{ bottom:-500px; opacity:0 } 
     to{ bottom:0; opacity:1 }

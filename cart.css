@@ -8,6 +8,24 @@
     color: #777;
 }
 
+html, body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+}
+
+.no-js #loader { display: none;  }
+.js #loader { display: block; position: absolute; left: 100px; top: 0; }
+.se-pre-con {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background: url(Images/Preloader_2.gif) center no-repeat #fff;
+}
+
 .nav ul {
     margin: 0;
 }
@@ -63,10 +81,15 @@
 .content-section {
     margin: 1em;
     animation-name: showPage;
-    animation-delay: 2.8s;
+    /* animation-delay: 2.8s; */
     animation-duration: 2s;
     position: relative;
 }
+
+@keyframes showPage { 
+    from{ bottom:-500px; opacity:0 } 
+    to{ bottom:0; opacity:1 }
+  }
 
 .container {
     max-width: 1000px;

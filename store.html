@@ -4,10 +4,14 @@
         <title>Gidi's Store</title>
         <meta name="description" content="This is the description">
         <link rel="stylesheet" href="style.css"/>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
+        <script src="https://kit.fontawesome.com/93c48aecb0.js"></script>
         <script src="store.js" async></script>
     </head>
     <body>
-        <div id="loader-container"> <div id="loader"></div> </div>
+        <!-- <div id="loader-container"> <div id="loader"></div> </div> -->
+        <div class="se-pre-con"></div>
         <header class="main-header">
             <nav class="main-nav nav">
                 <ul>
@@ -100,7 +104,7 @@
                 </div>
             </div>
         </section>
-        <section class="container content-section">
+        <section class="container content-section" style="display: none">
             <h2 class="section-header">CART</h2>
             <div class="cart-row">
                 <span class="cart-item cart-header cart-column">ITEM</span>
@@ -137,6 +141,11 @@
             </div>
             <button class="btn btn-primary btn-purchase" type="button">PURCHASE</button>
         </section>
+        <div id="cart" class="content-section">
+            <a href="cart.html">
+            <i class="fas fa-shopping-cart fa-3x"></i>
+            <div id="item-number">0</div></a>
+        </div>
         <footer class="main-footer">
             <div class="container main-footer-container">
                 <h3 class="band-name">Gidi's Store</h3>

@@ -55,9 +55,9 @@ window.onclick = function(event){
     }
 }
 
-let LIST, id;
 
 // get cart data from local storage
+let LIST, id;
 let cartData = localStorage.getItem("cart-data");
 
 // check if cart data is not empty
@@ -146,6 +146,7 @@ function addToCartClicked(event){
     PopupModal()
 }
 
+// Add item to cart function
 function addItemToCart(id, title, price, imageSrc, quantity){
     var cartRow = document.createElement('div')
     cartRow.classList.add('cart-row')

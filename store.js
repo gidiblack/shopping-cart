@@ -142,8 +142,8 @@ function addToCartClicked(event){
         localStorage.setItem("cart-data", JSON.stringify(LIST));
         updateCartTotal()
         increaseCartIcon()
+        PopupModal()
     }
-    PopupModal()
 }
 
 // Add item to cart function

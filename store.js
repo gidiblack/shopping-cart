@@ -11,6 +11,7 @@ $(window).load(function() {
     $(".se-pre-con").fadeOut("slow");;
 });
 
+
 // Event listeners
 var removeCartItemButtons = document.getElementsByClassName("btn-danger");
 for (var i = 0; i < removeCartItemButtons.length; i++){
@@ -30,13 +31,31 @@ for (var i = 0; i < addToCartButtons.length; i++){
     button.addEventListener('click', addToCartClicked)
 }
 
+// Cart item count on sticky icon
 function increaseCartIcon(){
     var cartIcon = document.getElementById("item-number");
     cartIcon.innerHTML = LIST.length;
 }
 
-let LIST, id;
+// Modal popup function
+var modal = document.getElementById("Modal")
+var continueShopping = document.getElementById("continue-sh")
 
+function PopupModal(){
+    modal.style.display = "flex";
+}
+// close modal
+continueShopping.onclick = function(){
+    modal.style.display = "none";
+}
+
+window.onclick = function(event){
+    if (event.target == modal){
+        modal.style.display = "none";
+    }
+}
+
+let LIST, id;
 
 // get cart data from local storage
 let cartData = localStorage.getItem("cart-data");
@@ -82,9 +101,7 @@ function removeCartItem(event){
 
     localStorage.setItem("cart-data", JSON.stringify(LIST));
     updateCartTotal()
-    increaseCartIcon()
-    // update local storage
-    
+    increaseCartIcon()  
 }
 
 // quantity change function
@@ -108,7 +125,7 @@ function addToCartClicked(event){
     var title = shopItem.getElementsByClassName('shop-item-title')[0].innerText
     var price = shopItem.getElementsByClassName('shop-item-price')[0].innerText
     var imageSrc = shopItem.getElementsByClassName('shop-item-image')[0].src
-
+    
     var quantity = 1
 
     if(addItemToCart(id, title, price, imageSrc, quantity)){
@@ -126,6 +143,7 @@ function addToCartClicked(event){
         updateCartTotal()
         increaseCartIcon()
     }
+    PopupModal()
 }
 
 function addItemToCart(id, title, price, imageSrc, quantity){
@@ -155,6 +173,7 @@ function addItemToCart(id, title, price, imageSrc, quantity){
     cartRow.getElementsByClassName('btn-danger')[0].addEventListener('click', removeCartItem)
     cartRow.getElementsByClassName('cart-quantity-input')[0].addEventListener('change', quantityChanged)
     updateCartTotal()
+    increaseCartIcon()
     return true
 }
 

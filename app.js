@@ -1,10 +1,7 @@
-// page loader timeout
-// (function(){
-//     'use strict';
-//     setTimeout(function(){
-//         document.getElementById("loader-container").style.display = "none";
-//     },3000 )
-// })()
+$(window).load(function() {
+    // Animate loader off screen
+    $(".se-pre-con").fadeOut("slow");;
+});
 
 
 // Event listeners
